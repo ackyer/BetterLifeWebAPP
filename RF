@@ -1,15 +1,5 @@
 #BETTER LIFE RFs
 
-- Calendar with your chores
-
-- Add tasks
-
-- Add reminders
-
-- Create proyects
-
-- Different types of tasks
-
 • User Authentication and Access Control (roles for view, edit, and admin permissions)
 • Commenting and Note-taking (commenting on specific parts of documents)
 • Export and Print (export to PDF, Word, Excel; print documents)
@@ -17,5 +7,5 @@
 • Templates (pre-designed templates for common documents like reports, resumes, etc.)
 • Scheduling and Calendar (integrate and schedule meetings, reminders)
 • File Sharing (share files with others via links or permissions)
-• Task Management (to-do list, assigning tasks to others)
+• Task Management (to-do list, assigning tasks to others, classification of tasks, proyects with tasks inside...)
 
