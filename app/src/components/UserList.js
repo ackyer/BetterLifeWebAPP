@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
 function UserList({ onUserDeleted }) {
-    const [users, setUsers] = useState([]);
+    const [usuario, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('http://localhost:3000/usuario')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Failed to fetch users');
@@ -23,10 +23,10 @@ function UserList({ onUserDeleted }) {
             });
     }, []); // Runs once when the component mounts
 
-    const handleDelete = (id) => {
-        fetch(`http://localhost:5000/users/${id}`, { method: 'DELETE' })
+    const handleDelete = (id_usuario) => {
+        fetch(`http://localhost:3000/usuario/${id_usuario}`, { method: 'DELETE' })
             .then(() => {
-                onUserDeleted(id); // Notify parent component to remove user from state
+                onUserDeleted(id_usuario); // Notify parent component to remove user from state
             })
             .catch(err => console.error(err));
     };
@@ -36,10 +36,10 @@ function UserList({ onUserDeleted }) {
 
     return (
         <ul>
-            {users.map(user => (
-                <li key={user.id}>
-                    {user.name} - {user.email}
-                    <button onClick={() => handleDelete(user.id)}>Delete</button>
+            {usuario.map(usuario => (
+                <li key={usuario.id_usuario}>
+                    {usuario.nombre} - {usuario.email}
+                    <button onClick={() => handleDelete(usuario.id_usuario)}>Delete</button>
                 </li>
             ))}
         </ul>

@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 
 function AddUser({ onUserAdded }) {
-    const [name, setName] = useState('');
+    const [nombre, setName] = useState('');
     const [email, setEmail] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:5000/users', {
+        fetch('http://localhost:3000/usuario', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, email }),
+            body: JSON.stringify({ nombre, email }),
         })
             .then(response => response.json())
             .then(newUser => {
@@ -25,7 +25,7 @@ function AddUser({ onUserAdded }) {
             <input
                 type="text"
                 placeholder="Name"
-                value={name}
+                value={nombre}
                 onChange={(e) => setName(e.target.value)}
                 required
             />
